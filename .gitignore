@@ -1,11 +1,15 @@
 *.pyc
-
+*.egg-info/
 # the download folder for any saved, crawled data (testing)
 data/
+cc_download_warc/
+cc_download_articles/
 .resume_jobdir/
 __pycache__/
 .idea/
 .DS_Store
 news-please.iml
-
 venv/
+
+# VS code:
+.vscode/
