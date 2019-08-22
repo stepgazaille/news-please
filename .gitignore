@@ -4,6 +4,7 @@
 data/
 cc_download_warc/
 cc_download_articles/
+cc_news/
 .resume_jobdir/
 __pycache__/
 .idea/
@@ -13,3 +14,6 @@ venv/
 
 # VS code:
 .vscode/
+
+# Jupyter:
+*.ipynb_checkpoints
