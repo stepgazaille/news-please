@@ -130,7 +130,7 @@ def callback_on_warc_completed(warc_path, counter_article_passed, counter_articl
 def main():
     global my_local_download_dir_warc
     global my_local_download_dir_article
-    delete_warc_after_extraction = False
+    global my_delete_warc_after_extraction
     global my_number_of_extraction_processes
 
     if len(sys.argv) >= 2:
@@ -144,7 +144,7 @@ def main():
 
     print("my_local_download_dir_warc=" + my_local_download_dir_warc)
     print("my_local_download_dir_article=" + my_local_download_dir_article)
-    print("delete_warc_after_extraction=" + str(delete_warc_after_extraction))
+    print(",y_delete_warc_after_extraction=" + str(my_delete_warc_after_extraction))
     print("my_number_of_extraction_processes=" + str(my_number_of_extraction_processes))
 
     __setup__()
@@ -160,7 +160,7 @@ def main():
                                                show_download_progress=my_show_download_progress,
                                                number_of_extraction_processes=my_number_of_extraction_processes,
                                                log_level=my_log_level,
-                                               delete_warc_after_extraction=True,
+                                               delete_warc_after_extraction=my_delete_warc_after_extraction,
                                                continue_process=True)
 
 

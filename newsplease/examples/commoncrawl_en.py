@@ -58,7 +58,7 @@ my_log_level = logging.INFO
 # json export style
 my_json_export_style = 0  # 0 (minimize), 1 (pretty)
 # number of extraction processes
-my_number_of_extraction_processes = 4
+my_number_of_extraction_processes = 32
 # if True, the WARC file will be deleted after all articles have been extracted from it
 my_delete_warc_after_extraction = True
 # if True, will continue extraction from the latest fully downloaded but not fully extracted WARC files and then
@@ -133,7 +133,7 @@ def callback_on_warc_completed(warc_path, counter_article_passed, counter_articl
 def main():
     global my_local_download_dir_warc
     global my_local_download_dir_article
-    delete_warc_after_extraction = False
+    global my_delete_warc_after_extraction
     global my_number_of_extraction_processes
 
     if len(sys.argv) >= 2:
@@ -147,7 +147,7 @@ def main():
 
     print("my_local_download_dir_warc=" + my_local_download_dir_warc)
     print("my_local_download_dir_article=" + my_local_download_dir_article)
-    print("delete_warc_after_extraction=" + str(delete_warc_after_extraction))
+    print("my_delete_warc_after_extraction=" + str(my_delete_warc_after_extraction))
     print("my_number_of_extraction_processes=" + str(my_number_of_extraction_processes))
 
     __setup__()
@@ -163,7 +163,7 @@ def main():
                                                show_download_progress=my_show_download_progress,
                                                number_of_extraction_processes=my_number_of_extraction_processes,
                                                log_level=my_log_level,
-                                               delete_warc_after_extraction=True,
+                                               delete_warc_after_extraction=my_delete_warc_after_extraction,
                                                continue_process=True)
 
 
